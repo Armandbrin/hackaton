@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<section class="text-white py-14 flex flex-col items-center" style="background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);">
+		<h1 class="text-4xl mx-5 text-center">Importer vos CV et soyez vue par des centaines d'entreprises</h1>
+		{% if app.user %}
+			<a href="{{ path("app_profil") }}" class="rounded-lg bg-blue-500 p-1 mt-5">Importer mon CV</a>
+		{% else %}
+			<a href="{{ path("app_login") }}" class="rounded-lg bg-blue-500 p-1 mt-5">Importer mon CV</a>
+		{% endif %}
+	</section>
+	<section class="mx-5">
+		<h2 class="text-center text-xl my-5">Comment ça marche</h2>
+		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti est, et pariatur aliquid cum at error explicabo libero ratione qui accusamus sed fuga soluta numquam. Quae voluptatibus voluptates placeat rem.
+			<br><br>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti est, et pariatur aliquid cum at error explicabo libero ratione qui accusamus sed fuga soluta numquam. Quae voluptatibus voluptates placeat rem.</p>
+	</section>
+{% endblock %}

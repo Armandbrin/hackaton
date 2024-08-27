@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil
+{% endblock %}
+
+{% block body %}
+	<h1 class="mb-10 ml-5 text-2xl">Salut
+		{{ app.user.prenom }}
+		!</h1>
+	<section class="flex flex-col ml-5 gap-2">
+		<h2 class="text-xl underline">Information personnelle :</h2>
+		<h3>email :
+			{{ app.user.email }}</h3>
+		<h3>prenom :
+			{{ app.user.prenom }}</h3>
+		<h3>nom :
+			{{ app.user.nom }}</h3>
+		<h3>age :
+			{{ app.user.age }}</h3>
+		<h3>poste :
+			{{ app.user.poste }}</h3>
+	</section>
+	<section class="mt-5 ml-5">
+		<form action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="cv[]" id="">
+		</form>
+	</section>
+	<pre>
+		{{ dump(app.user.roles) }}
+	</pre>
+	{% if app.user.roles != "admin" %}
+		<p>oui</p>
+	{% else %}
+		<p>non</p>
+	{% endif %}
+{% endblock %}
